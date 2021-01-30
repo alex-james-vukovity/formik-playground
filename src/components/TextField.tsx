@@ -13,7 +13,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 const InputStyled = styled.input`
   width: fill-available;
   padding: 8px 16px;
-  border: 1px solid black;
+  border: 2px solid black;
 
   &:focus {
     outline: 2px solid black;

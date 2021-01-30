@@ -9,7 +9,7 @@ import { ErrorMessage } from './ErrorMessage'
 const MultiLineTextFieldStyled = styled.textarea`
   width: fill-available;
   padding: 8px 16px;
-  border: 1px solid black;
+  border: 2px solid black;
   resize: vertical;
 
   &:focus {
