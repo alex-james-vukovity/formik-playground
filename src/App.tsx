@@ -69,30 +69,28 @@ export const App: FC = () => {
         validationSchema={AppFormSchema}
         onSubmit={onSubmit}
       >
-        {({ isSubmitting }) => {
-          return (
-            <Form>
-              <FormGridContainer>
+        {({ isSubmitting, dirty }) => (
+          <Form>
+            <FormGridContainer>
+              <FormGridItem>
+                <TextField name="title" label="Title" />
+              </FormGridItem>
+              <FormGridItem>
+                <MultiLineTextField name="body" label="Body" />
+              </FormGridItem>
+              <FormGridItem>
+                <Button disabled={isSubmitting || !dirty} type="submit">
+                  <Text>Send it</Text>
+                </Button>
+              </FormGridItem>
+              {notification && (
                 <FormGridItem>
-                  <TextField name="title" label="Title" />
+                  <Text>{notification}</Text>
                 </FormGridItem>
-                <FormGridItem>
-                  <MultiLineTextField name="body" label="Body" />
-                </FormGridItem>
-                <FormGridItem>
-                  <Button disabled={isSubmitting} type="submit">
-                    <Text>Send it</Text>
-                  </Button>
-                </FormGridItem>
-                {notification && (
-                  <FormGridItem>
-                    <Text>{notification}</Text>
-                  </FormGridItem>
-                )}
-              </FormGridContainer>
-            </Form>
-          )
-        }}
+              )}
+            </FormGridContainer>
+          </Form>
+        )}
       </Formik>
     </Panel>
   )

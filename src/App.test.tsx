@@ -62,7 +62,7 @@ test('should render the button', async () => {
 
   const button = screen.getByRole('button', { name: 'Send it' })
   expect(button).toBeInTheDocument()
-  expect(button).toBeEnabled()
+  expect(button).toBeDisabled()
 })
 
 test('should render the success notification after form submission', async () => {
