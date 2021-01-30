@@ -52,6 +52,14 @@ export const App: FC = () => {
     }
   }
 
+  if (!data) {
+    return (
+      <Panel role="spinbutton">
+        <Heading variant="h1">Loading...</Heading>
+      </Panel>
+    )
+  }
+
   return (
     <Panel>
       <Heading variant="h1">Hey im h1</Heading>
