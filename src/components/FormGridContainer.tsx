@@ -8,6 +8,8 @@ const FormGridContainerStyled = styled.div`
   min-width: 300px;
 `
 
-export const FormGridContainer: FC<HTMLAttributes<HTMLDivElement>> = memo(({ children }) => (
-  <FormGridContainerStyled>{children}</FormGridContainerStyled>
+export const FormGridContainer: FC<
+  HTMLAttributes<HTMLDivElement>
+> = memo(({ children, ...props }) => (
+  <FormGridContainerStyled {...props}>{children}</FormGridContainerStyled>
 ))

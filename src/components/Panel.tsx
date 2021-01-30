@@ -5,6 +5,6 @@ const PanelStyled = styled.article`
   margin: 20px;
 `
 
-export const Panel: FC<HTMLAttributes<HTMLDivElement>> = memo(({ children }) => (
-  <PanelStyled>{children}</PanelStyled>
+export const Panel: FC<HTMLAttributes<HTMLDivElement>> = memo(({ children, ...props }) => (
+  <PanelStyled {...props}>{children}</PanelStyled>
 ))

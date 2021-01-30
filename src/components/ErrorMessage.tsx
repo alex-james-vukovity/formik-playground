@@ -7,6 +7,8 @@ const ErrorMessageStyled = styled(Text)`
   color: red;
 `
 
-export const ErrorMessage: FC<HTMLAttributes<HTMLParagraphElement>> = memo(({ children }) => (
-  <ErrorMessageStyled>Error: {children}</ErrorMessageStyled>
+export const ErrorMessage: FC<
+  HTMLAttributes<HTMLParagraphElement>
+> = memo(({ children, ...props }) => (
+  <ErrorMessageStyled {...props}>Error: {children}</ErrorMessageStyled>
 ))
