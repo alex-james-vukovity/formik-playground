@@ -1,30 +1,43 @@
 import { FC } from 'react'
 import { Formik, Form } from 'formik'
 
-import { Heading, Box, Button, TextField } from './components'
+import { Heading, Button, TextField, Panel, FormGridContainer, FormGridItem } from './components'
 import { AppFormProps } from './interfaces'
 import { AppFormSchema } from './validations'
 
 export const App: FC = () => {
   const onSubmit = async (values: AppFormProps): Promise<void> => {
-    await console.log(values)
+    await console.log(JSON.stringify(values))
   }
 
   return (
-    <Box>
+    <Panel>
       <Heading variant="h1">Hey im h1</Heading>
-      <Formik initialValues={{ name: '' }} validationSchema={AppFormSchema} onSubmit={onSubmit}>
+      <Formik
+        initialValues={{ firstName: '', lastName: '' }}
+        validationSchema={AppFormSchema}
+        onSubmit={onSubmit}
+      >
         {({ isSubmitting }) => {
           return (
             <Form>
-              <TextField name="name" label="Name" />
-              <Button disabled={isSubmitting} type="submit">
-                Send it
-              </Button>
+              <FormGridContainer>
+                <FormGridItem>
+                  <TextField name="firstName" label="First name" />
+                </FormGridItem>
+                <FormGridItem>
+                  <TextField name="lastName" label="Last name" />
+                </FormGridItem>
+                <FormGridItem>
+                  <Button disabled={isSubmitting} type="submit">
+                    Send it
+                  </Button>
+                </FormGridItem>
+              </FormGridContainer>
             </Form>
           )
         }}
       </Formik>
-    </Box>
+    </Panel>
   )
 }

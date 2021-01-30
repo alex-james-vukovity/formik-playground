@@ -1,3 +1,4 @@
 export interface AppFormProps {
-  name: string
+  firstName: string
+  lastName: string
 }

@@ -1,5 +1,6 @@
 import * as Yup from 'yup'
 
 export const AppFormSchema = Yup.object().shape({
-  name: Yup.string().required('Required')
+  firstName: Yup.string().required('Required'),
+  lastName: Yup.string().required('Required')
 })
