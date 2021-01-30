@@ -16,7 +16,7 @@ export const TextField: FC<Props> = ({ name = '', label, ...props }) => {
     <Box>
       {label && <Label htmlFor={name}>{label}</Label>}
       {touched && error && <ErrorMessage>{error}</ErrorMessage>}
-      <input id={name} {...props} {...field} />
+      <input type="text" id={name} {...props} {...field} />
     </Box>
   )
 }
