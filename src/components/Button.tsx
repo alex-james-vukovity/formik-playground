@@ -1,7 +1,7 @@
 import { FC, memo, ButtonHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-const ButtonStled = styled.button`
+const ButtonStyled = styled.button`
   background-color: white;
   height: 35px;
   min-width: 35px;
@@ -22,4 +22,4 @@ const ButtonStled = styled.button`
 
 export const Button: FC<
   ButtonHTMLAttributes<HTMLButtonElement>
-> = memo(({ children, ...props }) => <ButtonStled {...props}>{children}</ButtonStled>)
+> = memo(({ children, ...props }) => <ButtonStyled {...props}>{children}</ButtonStyled>)
