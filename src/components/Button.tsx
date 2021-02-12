@@ -3,8 +3,11 @@ import styled from 'styled-components'
 
 const ButtonStled = styled.button`
   background-color: white;
-  padding: 8px 16px;
+  height: 35px;
+  min-width: 35px;
+  padding: 0px 16px;
   border: 2px solid black;
+  cursor: pointer;
 
   &:focus {
     outline: 2px solid black;

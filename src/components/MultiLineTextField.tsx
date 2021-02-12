@@ -11,6 +11,8 @@ const MultiLineTextFieldStyled = styled.textarea`
   padding: 8px 16px;
   border: 2px solid black;
   resize: vertical;
+  font-size: 14px;
+  line-height: 24px;
 
   &:focus {
     outline: 2px solid black;
