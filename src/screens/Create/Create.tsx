@@ -58,7 +58,7 @@ export const Create: FC = () => {
         <Heading variant="h1">Create</Heading>
       </Header>
       <Nav>
-        <Button onClick={() => push('/')}>
+        <Button onClick={() => push('/')} type="button">
           <Text>Back</Text>
         </Button>
       </Nav>

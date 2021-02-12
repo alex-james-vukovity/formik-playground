@@ -61,7 +61,7 @@ export const List: FC = () => {
         <Heading variant="h1">List</Heading>
       </Header>
       <Nav>
-        <Button onClick={() => push('/posts/create')}>
+        <Button onClick={() => push('/posts/create')} type="button">
           <Text>Create</Text>
         </Button>
       </Nav>
