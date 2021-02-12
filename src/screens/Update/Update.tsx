@@ -14,7 +14,8 @@ import {
   Form,
   Header,
   Nav,
-  Spinner
+  Spinner,
+  ButtonGroup
 } from 'components'
 import { AppFormProps } from 'interfaces'
 import { AppFormSchema } from 'validations'
@@ -43,7 +44,7 @@ export const Update: FC = () => {
     fetchPosts()
   }, [postId])
 
-  const onSubmit = async (values: AppFormProps): Promise<void> => {
+  const onUpdate = async (values: AppFormProps): Promise<void> => {
     setState(States.LoadingPut)
     const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
       method: 'PUT',
@@ -57,6 +58,19 @@ export const Update: FC = () => {
       const responseBody = await response.json()
       setData(responseBody)
       setState(States.Success)
+    } else {
+      setState(States.Error)
+    }
+  }
+
+  const onDelete = async (): Promise<void> => {
+    setState(States.LoadingGet)
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+      method: 'DELETE'
+    })
+
+    if (response.ok) {
+      push('/')
     } else {
       setState(States.Error)
     }
@@ -82,15 +96,20 @@ export const Update: FC = () => {
         <Heading variant="h1">Update</Heading>
       </Header>
       <Nav>
-        <Button onClick={() => push('/')}>
-          <Text>Back</Text>
-        </Button>
+        <ButtonGroup>
+          <Button onClick={onDelete} type="button">
+            <Text>Delete</Text>
+          </Button>
+          <Button onClick={() => push('/')} type="button">
+            <Text>Back</Text>
+          </Button>
+        </ButtonGroup>
       </Nav>
       <Formik
         enableReinitialize
         initialValues={data || ({} as AppFormProps)}
         validationSchema={AppFormSchema}
-        onSubmit={onSubmit}
+        onSubmit={onUpdate}
       >
         {({ dirty }) => (
           <Form>
