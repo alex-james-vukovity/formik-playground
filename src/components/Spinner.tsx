@@ -29,7 +29,7 @@ const StyledSpinner = styled(Box)`
 `
 
 export const Spinner: FC<HTMLAttributes<HTMLDivElement>> = memo(({ children, ...props }) => (
-  <StyledBox>
+  <StyledBox role="spinbutton">
     <StyledSpinner {...props}>{children}</StyledSpinner>
   </StyledBox>
 ))
