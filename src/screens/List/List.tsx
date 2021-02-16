@@ -14,7 +14,7 @@ import {
   Nav,
   Button,
   Text,
-  Spinner,
+  Loader,
   TableBody
 } from 'components'
 import { States } from 'enums'
@@ -52,7 +52,11 @@ export const List: FC = () => {
   }
 
   if (state === States.LoadingGet) {
-    return <Spinner />
+    return (
+      <Panel>
+        <Loader />
+      </Panel>
+    )
   }
 
   return (

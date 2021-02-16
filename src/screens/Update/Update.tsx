@@ -14,7 +14,7 @@ import {
   Form,
   Header,
   Nav,
-  Spinner,
+  Loader,
   ButtonGroup
 } from 'components'
 import { AppFormProps } from 'interfaces'
@@ -87,7 +87,11 @@ export const Update: FC = () => {
   }
 
   if (state === States.LoadingGet) {
-    return <Spinner />
+    return (
+      <Panel>
+        <Loader />
+      </Panel>
+    )
   }
 
   return (
